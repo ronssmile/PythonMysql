@@ -1,32 +1,6 @@
 from getpass import getpass
 from mysql.connector import connect, Error
-
-# this will be use in executemany method
-reviewers_records = [
-    ("Chaitanya", "Baweja"),
-    ("Mary", "Cooper"),
-    ("John", "Wayne"),
-    ("Thomas", "Stoneman"),
-    ("Penny", "Hofstadter"),
-    ("Mitchell", "Marsh"),
-    ("Wyatt", "Skaggs"),
-    ("Andre", "Veiga"),
-    ("Sheldon", "Cooper"),
-    ("Kimbra", "Masters"),
-    ("Kat", "Dennings"),
-    ("Bruce", "Wayne"),
-    ("Domingo", "Cortes"),
-    ("Rajesh", "Koothrappali"),
-    ("Ben", "Glocker"),
-    ("Mahinder", "Dhoni"),
-    ("Akbar", "Khan"),
-    ("Howard", "Wolowitz"),
-    ("Pinkie", "Petit"),
-    ("Gurkaran", "Singh"),
-    ("Amy", "Farah Fowler"),
-    ("Marlon", "Crafford"),
-]
-
+from data import *
 
 #inserting table - this approach is more suitable when the number of records is fairly small
 
@@ -89,10 +63,20 @@ try:
         INSERT INTO reviewers(first_name, last_name)
         VALUES ( %s, %s)
         """
+        insert_ratings_query = """
+        INSERT INTO ratings
+        (rating, movie_id, reviewer_id)
+        VALUES ( %s, %s, %s)
+        """
 
         with connection.cursor() as cursor:
-            cursor.executemany(insert_reviewers_query,reviewers_records)
+            '''This will execute to populate the reviewers table'''
+            #cursor.executemany(insert_reviewers_query,reviewers_records)
+            '''This will execute to popultae the ratings table'''
+            cursor.executemany(insert_ratings_query,ratings_records)
             connection.commit()
+
+
 
 except Error as e:
     print(e)

@@ -1,0 +1,40 @@
+#data to be extract in the table
+reviewers_records = [
+    ("Chaitanya", "Baweja"),
+    ("Mary", "Cooper"),
+    ("John", "Wayne"),
+    ("Thomas", "Stoneman"),
+    ("Penny", "Hofstadter"),
+    ("Mitchell", "Marsh"),
+    ("Wyatt", "Skaggs"),
+    ("Andre", "Veiga"),
+    ("Sheldon", "Cooper"),
+    ("Kimbra", "Masters"),
+    ("Kat", "Dennings"),
+    ("Bruce", "Wayne"),
+    ("Domingo", "Cortes"),
+    ("Rajesh", "Koothrappali"),
+    ("Ben", "Glocker"),
+    ("Mahinder", "Dhoni"),
+    ("Akbar", "Khan"),
+    ("Howard", "Wolowitz"),
+    ("Pinkie", "Petit"),
+    ("Gurkaran", "Singh"),
+    ("Amy", "Farah Fowler"),
+    ("Marlon", "Crafford"),
+]
+
+ratings_records = [
+    (6.4, 31, 5), (5.6, 60, 1), (6.3, 32, 14), (5.1, 33, 17),
+    (5.0, 40, 5), (6.5, 34, 5), (8.5, 40, 13), (9.7, 46, 4),
+    (8.5, 45, 12), (9.9, 40, 9), (8.7, 31, 14), (9.9, 56, 10),
+    (5.1, 55, 6), (5.4, 43, 16), (6.2, 32, 20), (7.3, 31, 19),
+    (8.1, 35, 18), (5.0, 42, 2), (9.8, 37, 3), (8.0, 42, 9),
+    (8.5, 36, 13), (5.0, 33, 11), (5.7, 38, 2), (7.6, 55, 19),
+    (5.2, 37, 15), (9.7, 38, 3), (5.8, 48, 8), (5.8, 57, 15),
+    (8.4, 40, 18), (6.2, 36, 16), (7.0, 60, 18), (9.5, 58, 20),
+    (8.9, 38, 19), (6.4, 33, 2), (7.8, 52, 22), (9.9, 59, 13),
+    (7.5, 32, 17), (9.0, 32, 6), (8.5, 43, 2), (5.3, 31, 17),
+    (6.4, 54, 10), (8.1, 50, 21), (5.7, 32, 1), (6.3, 38, 4),
+    (9.8, 53, 1)
+]
