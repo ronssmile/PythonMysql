@@ -1,6 +1,7 @@
 from getpass import getpass
 from mysql.connector import connect, Error
-from data import *
+
+
 
 #inserting table - this approach is more suitable when the number of records is fairly small
 

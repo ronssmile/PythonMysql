@@ -1,18 +1,28 @@
 import csv
 import json
 
+#read csv file the make a list of tuple
+def csv_to_data(file_name):
+    with open("example.csv", "r") as f:
+        reader = csv.reader(f)
+        next(reader)
+        data1 = []
+        for row in reader:
+            data1.append(row)
 
-with open("example.csv", "r") as f:
-    reader = csv.reader(f)
-    next(reader)
-    data = {"reviewers_records":[]}
-    for row in reader:
-        data["reviewers_records"].append({"first_name":row[0], "last_name": row[1]})
+        data = [tuple(x) for x in data1]
+    return data1
 
-for i in range(0,len(data["reviewers_records"])):
-    
-    print(data["reviewers_records"][i])
-# with open("data.json","w") as f:
-#     json.dump(data,f, indent=4)
 
+#converting csv to json
+def csv_json(file_name):
+    with open("example.csv","r") as f:
+        reader = csv.reader(f)
+        next(reader) #to bypass or ignore header title
+        jdata ={"reviewer_records":[]}
+        for row in reader:
+            jdata["reviewer_records"].append({"first_name":row[0], "last_name":row[1]})
+
+    with open ("json_data.json","w") as f:
+        json.dump(jdata,f,indent=4)
 

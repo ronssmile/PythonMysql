@@ -1,4 +1,7 @@
+import pandas as pd
+
 #data to be extract in the table
+#convert list of tuple to csv
 reviewers_records = [
     ("Chaitanya", "Baweja"),
     ("Mary", "Cooper"),
@@ -38,3 +41,6 @@ ratings_records = [
     (6.4, 54, 10), (8.1, 50, 21), (5.7, 32, 1), (6.3, 38, 4),
     (9.8, 53, 1)
 ]
+
+df = pd.DataFrame(ratings_records)
+df.to_csv("ratings_records.csv", index=False, header=False)

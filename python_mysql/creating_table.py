@@ -6,7 +6,7 @@ try:
         host = "localhost",
         username = input("Enter Username: "),
         password = getpass("Enter Password: "),
-        database = "dbsocialmedia",
+        database = "online_movie_rating",
     )as connection:
         create_movies_table_query = """
 CREATE TABLE movies(
@@ -17,8 +17,8 @@ CREATE TABLE movies(
     collection_in_mil INT
 )
 """
-        create_reviewers_table_query="""
-CREATE TABLE reviewers (
+        create_example_table_query="""
+CREATE TABLE example (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100),
     last_name VARCHAR(100)
@@ -39,11 +39,11 @@ CREATE TABLE ratings (
         ALTER TABLE movies MODIFY COLUMN collection_in_mil DECIMAL (4,1)
         """
         #print(connection)
-        #with connection.cursor() as cursor:
+        with connection.cursor() as cursor:
             #cursor.execute(create_movies_table_query)
-            #cursor.execute(create_reviewers_table_query)
+            cursor.execute(create_example_table_query)
             #cursor.execute(create_ratings_table_query)
-            #connection.commit()
+            connection.commit()
             #cursor.execute(alter_table_query)
             #cursor.execute("DESCRIBE movies")
             #result = cursor.fetchall()
